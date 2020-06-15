@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/imgbackground2"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityEncryptionImage">
+    <ImageView
+        android:id="@+id/img_incryption_id"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/imgselect"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Encryption now"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_shape"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/txt_resultsequenceimage_id"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#ffffff"
+        android:layout_margin="10dp"
+        android:hint="Result sequence DNA"
+        android:gravity="center"
+        android:textSize="20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            android:hint=" Image Name"
+            android:gravity="center"
+            android:textSize="20dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:background="@drawable/btn_shape"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="#ffffff"
+            />
+    </LinearLayout>
+
+</LinearLayout>

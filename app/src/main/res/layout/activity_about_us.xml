@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAboutUs">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="يقوم التطبيق بتشفير الملفات النصيه وملفات الصوت والصور الى تسلسل الحمض النووي
+وهي طريقه مستحدثه في تشفير البيانات ، فبعد تشفير الملف المطلوب يمكن اخذ تسلسل الحمض النووي الخاص بالملف المشفر وتصنيعه في معامل طبيه لانشاء الحمض النووي ثم يتك زرعه في كائن حي واستخلاصه مره اخرى بعد ذلك من الطرف الاخر وفك تشفيره
+وذلك لاعادته للصوره الاصليه
+"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
