@@ -1,14 +1,14 @@
 package com.example.encryptionusingdna;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ListView;
+        import android.os.Bundle;
+        import android.widget.ListView;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 public class ActivityImages extends AppCompatActivity {
-     ListView listView;
+    ListView listView;
     ArrayList<User> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

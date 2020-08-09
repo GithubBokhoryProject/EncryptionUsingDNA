@@ -24,13 +24,4 @@ public class DecryptionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoactivitydecryptionimage(View view) {
-        Intent intent=new Intent(DecryptionActivity.this,ActivityDecryptionImage.class);
-        startActivity(intent);
-    }
-
-    public void gotoactivitydecryptionvoice(View view) {
-        Intent intent=new Intent(DecryptionActivity.this,ActivityDecryptionVoice.class);
-        startActivity(intent);
-    }
 }

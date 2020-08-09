@@ -10,16 +10,27 @@
     <EditText
         android:id="@+id/txt_id"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#ffffff"
+        android:layout_height="140dp"
         android:layout_margin="10dp"
+        android:background="@drawable/edit_shape"
         android:hint="Enter Syntax Text"
         android:gravity="center"
         android:textSize="20dp"
         />
+    <EditText
+        android:id="@+id/id_key"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_shape"
+        android:hint="Enter key"
+        android:maxLength="16"
+        android:textColor="#f00"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        />
     <Button
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:text="Encryption now"
         android:textColor="#ffffff"
         android:background="@drawable/btn_shape"
@@ -29,8 +40,8 @@
     <EditText
         android:id="@+id/Result_DNA_id"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#ffffff"
+        android:layout_height="140dp"
+        android:background="@drawable/edit_shape"
         android:layout_margin="10dp"
         android:hint="Result sequence DNA"
         android:gravity="center"
@@ -46,7 +57,7 @@
             android:id="@+id/Filename_id"
             android:layout_width="150dp"
             android:layout_height="70dp"
-            android:background="#ffffff"
+            android:background="@drawable/edit_shape"
             android:layout_margin="10dp"
             android:hint=" File Name"
             android:gravity="center"
@@ -61,6 +72,5 @@
             android:onClick="btn_Save_File"
             />
     </LinearLayout>
-
 
 </LinearLayout>

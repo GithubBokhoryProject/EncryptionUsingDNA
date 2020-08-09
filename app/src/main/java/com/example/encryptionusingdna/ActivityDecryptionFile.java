@@ -25,13 +25,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ActivityDecryptionFile extends AppCompatActivity {
-        EditText Edit_sequenceDNA_File;
+    EditText Edit_sequenceDNA_File;
     EditText edit_Result_text,FileName;
+    EditText edit_key;
     public static final int WRIYE_EX_REQ_CODE=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decryption_file);
+        edit_key=findViewById(R.id.id_key);
         Edit_sequenceDNA_File=findViewById(R.id.sequenceDNA_File_id);
         edit_Result_text=findViewById(R.id.Result_DNA_id);
         FileName=findViewById(R.id.Filename_id);
@@ -129,12 +131,16 @@ public class ActivityDecryptionFile extends AppCompatActivity {
     }
 ////////////////////////////////////
     public void btn_Decryption_file(View view) {
-        String key="0123456789ABCDEF";
-        String Resultdna=DNA.split_dna(Edit_sequenceDNA_File.getText().toString().trim());
-        String End_Result_is_binary=DNA.convert_from_DNA_to_binary(Resultdna.trim());
-        String Result_Binary=Converter.binaryToText(End_Result_is_binary.trim());
-        String Result_Decryption=XXTEA.Decrypt(Result_Binary,key);
-        edit_Result_text.setText(Result_Decryption);
+        String key = edit_key.getText().toString();
+        if (key.length() < 16) {
+            Toast.makeText(this, "Key less than 16 Character", Toast.LENGTH_SHORT).show();
+        } else {
+            String Resultdna = DNA.split_dna(Edit_sequenceDNA_File.getText().toString().trim());
+            String End_Result_is_binary = DNA.convert_from_DNA_to_binary(Resultdna.trim());
+            String Result_Binary = Converter.binaryToText(End_Result_is_binary.trim());
+            String Result_Decryption = XXTEA.Decrypt(Result_Binary, key.trim());
+            edit_Result_text.setText(Result_Decryption);
+        }
     }
     ///////////////////////////
 }

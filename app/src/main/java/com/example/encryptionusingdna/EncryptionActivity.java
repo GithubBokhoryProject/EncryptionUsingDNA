@@ -24,13 +24,4 @@ public class EncryptionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoactivityencryptionimage(View view) {
-        Intent intent=new Intent(EncryptionActivity.this,ActivityEncryptionImage.class);
-        startActivity(intent);
-    }
-
-    public void gotoactivityencryptionvoice(View view) {
-        Intent intent=new Intent(EncryptionActivity.this,ActivityEncryptionVoice.class);
-        startActivity(intent);
-    }
 }

@@ -13,12 +13,8 @@
         <activity android:name=".ActivityImages"></activity>
         <activity android:name=".ActivityTeamWork" />
         <activity android:name=".ActivityAboutUs" />
-        <activity android:name=".ActivityDecryptionVoice" />
-        <activity android:name=".ActivityEncryptionVoice" />
-        <activity android:name=".ActivityDecryptionImage" />
         <activity android:name=".ActivityDecryptionFile" />
         <activity android:name=".ActivityDecryptionText" />
-        <activity android:name=".ActivityEncryptionImage" />
         <activity android:name=".ActivityEncryptionFile" />
         <activity android:name=".ActivityEncryptionText" />
         <activity android:name=".DecryptionActivity" />

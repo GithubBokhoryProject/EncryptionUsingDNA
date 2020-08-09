@@ -20,6 +20,7 @@ import java.io.IOException;
 public class ActivityEncryptionText extends AppCompatActivity {
     EditText edit_Text_Data;
     EditText edit_Result_DNA,FileName;
+    EditText edit_key;
     public static final int WRIYE_EX_REQ_CODE=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class ActivityEncryptionText extends AppCompatActivity {
         edit_Result_DNA=findViewById(R.id.Result_DNA_id);
         FileName=findViewById(R.id.Filename_id);
         edit_Text_Data=findViewById(R.id.txt_id);
-
+        edit_key=findViewById(R.id.id_key);
         //هل الصلاحيه تم الحصول عليها ام لا
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             // الصلاحيه لم يتم الحصول عليها
@@ -88,12 +89,16 @@ public class ActivityEncryptionText extends AppCompatActivity {
     }
 ////////////////////////////////////////////
     public void btn_Encryption(View view) {
-        String key="0123456789ABCDEF";
-        String Result_Encryption=XXTEA.Encrypt(edit_Text_Data.getText().toString(),key);
-        String Result_Binary=Converter.converttoBinary(Result_Encryption);
-        String[] Result_splitbinary= DNA.split_binary(Result_Binary);
-        String Result_DNA=DNA.convert_to_dna(Result_splitbinary);
-        edit_Result_DNA.setText(Result_DNA.trim());
+        String key = edit_key.getText().toString();
+        if (key.length() < 16) {
+            Toast.makeText(this, "Key less than 16 Character", Toast.LENGTH_SHORT).show();
+        } else {
+            String Result_Encryption = XXTEA.Encrypt(edit_Text_Data.getText().toString(), key.trim());
+            String Result_Binary = Converter.converttoBinary(Result_Encryption);
+            String[] Result_splitbinary = DNA.split_binary(Result_Binary);
+            String Result_DNA = DNA.convert_to_dna(Result_splitbinary);
+            edit_Result_DNA.setText(Result_DNA.trim());
+        }
     }
     ///////////////////////////
 }

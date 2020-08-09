@@ -34,23 +34,5 @@
         android:background="@drawable/btn_shape"
         android:onClick="gotoactivitydecryptionfile"
         android:layout_margin="10dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Image"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:background="@drawable/btn_shape"
-        android:onClick="gotoactivitydecryptionimage"
-        android:layout_margin="10dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Voice"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:background="@drawable/btn_shape"
-        android:onClick="gotoactivitydecryptionvoice"
-        android:layout_margin="10dp"/>
 
 </LinearLayout>

@@ -27,11 +27,13 @@ import java.io.InputStreamReader;
 public class ActivityEncryptionFile extends AppCompatActivity {
     EditText edit_Text_Data;
     EditText edit_Result_DNA,FileName;
+    EditText edit_key;
     public static final int WRIYE_EX_REQ_CODE=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encryption_file);
+        edit_key=findViewById(R.id.id_key);
         edit_Text_Data=findViewById(R.id.txt_file_id);
         edit_Result_DNA=findViewById(R.id.Result_DNA_id);
         FileName=findViewById(R.id.Filename_id);
@@ -128,12 +130,16 @@ public class ActivityEncryptionFile extends AppCompatActivity {
     }
 ///////////////////////////////////////////
     public void btn_Encryption_file(View view) {
-        String key="0123456789ABCDEF";
-        String Result_Encryption=XXTEA.Encrypt(edit_Text_Data.getText().toString(),key);
-        String Result_Binary=Converter.converttoBinary(Result_Encryption);
-        String[] Result_splitbinary= DNA.split_binary(Result_Binary);
-        String Result_DNA=DNA.convert_to_dna(Result_splitbinary);
-        edit_Result_DNA.setText(Result_DNA);
+        String key = edit_key.getText().toString();
+        if (key.length() < 16) {
+            Toast.makeText(this, "Key less than 16 Character", Toast.LENGTH_SHORT).show();
+        } else {
+            String Result_Encryption = XXTEA.Encrypt(edit_Text_Data.getText().toString(), key.trim());
+            String Result_Binary = Converter.converttoBinary(Result_Encryption);
+            String[] Result_splitbinary = DNA.split_binary(Result_Binary);
+            String Result_DNA = DNA.convert_to_dna(Result_splitbinary);
+            edit_Result_DNA.setText(Result_DNA);
+        }
     }
     ///////////////////////////
 }
